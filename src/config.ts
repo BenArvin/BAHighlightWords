@@ -38,7 +38,7 @@ class HighlightConfig {
             let decorationType = vscode.window.createTextEditorDecorationType({
                 borderWidth: '2px',
                 borderStyle: 'solid',
-                overviewRulerLane: vscode.OverviewRulerLane.Right,
+                overviewRulerLane: vscode.OverviewRulerLane.Full,
                 light: {
                     // this color will be used in light color themes
                     overviewRulerColor: color.light,

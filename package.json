@@ -3,7 +3,7 @@
   "displayName": "SimpleHighlightWords",
   "description": "simple highlight words",
   "icon": "images/highlight.png",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "benarvin",
   "engines": {
     "vscode": "^1.96.0"
@@ -93,15 +93,6 @@
               "dark": "red"
             }
           ]
-        },
-        "bahighlightwords.box": {
-          "default": {
-            "light": false,
-            "dark": true
-          }
-        },
-        "bahighlightwords.defaultMode": {
-          "default": 0
         },
         "bahighlightwords.showSidebar": {
           "default": true
