@@ -1,0 +1,161 @@
+{
+  "name": "simple-highlight-words",
+  "displayName": "SimpleHighlightWords",
+  "description": "simple highlight words",
+  "icon": "images/highlight.png",
+  "version": "0.0.1",
+  "publisher": "benarvin",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BenArvin/BAHighlightWords"
+  },
+  "activationEvents": [
+    "onCommand:bahighlightwords.addHighlight",
+    "onCommand:bahighlightwords.removeHighlight",    "onCommand:bahighlightwords.addRegExpHighlight",
+    "onCommand:bahighlightwords.removeAllHighlights"
+  ],
+  "main": "./dist/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bahighlightwords.addHighlight",
+        "title": "Highlight Toggle Current"
+      },
+      {
+        "command": "bahighlightwords.removeHighlight",
+        "title": "Highlight Remove"
+      },
+      {
+        "command": "bahighlightwords.removeAllHighlights",
+        "title": "Highlight Remove All"
+      },
+      {
+        "command": "bahighlightwords.treeRemoveHighlight",
+        "title": "Remove"
+      },
+      {
+        "command": "bahighlightwords.findPrevious",
+        "title": "Back",
+        "icon": {
+            "light": "resources/icons/arrow-left.svg",
+            "dark": "resources/icons/arrow-left-white.svg"
+        }
+      },
+      {
+          "command": "bahighlightwords.findNext",
+          "title": "Next",
+          "icon": {
+              "light": "resources/icons/arrow-right.svg",
+              "dark": "resources/icons/arrow-right-white.svg"
+          }
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "bahighlightwords.colors": {
+          "default": [
+            {
+              "light": "#b3d9ff",
+              "dark": "cyan"
+            },
+            {
+              "light": "#e6ffb3",
+              "dark": "pink"
+            },
+            {
+              "light": "#b3b3ff",
+              "dark": "lightgreen"
+            },
+            {
+              "light": "#ffd9b3",
+              "dark": "magenta"
+            },
+            {
+              "light": "#ffb3ff",
+              "dark": "cornflowerblue"
+            },
+            {
+              "light": "#b3ffb3",
+              "dark": "orange"
+            },
+            {
+              "light": "#ffff80",
+              "dark": "green"
+            },
+            {
+              "light": "#d1e0e0",
+              "dark": "red"
+            }
+          ]
+        },
+        "bahighlightwords.box": {
+          "default": {
+            "light": false,
+            "dark": true
+          }
+        },
+        "bahighlightwords.defaultMode": {
+          "default": 0
+        },
+        "bahighlightwords.showSidebar": {
+          "default": true
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "bahilightWordsExplore",
+          "name": "BAHighlights",
+          "when": "showSidebar"
+        }
+      ]
+    },
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "bahighlightwords.treeRemoveHighlight",
+          "when": "view == bahilightWordsExplore"
+        },
+        {
+          "command": "bahighlightwords.findPrevious",
+          "when": "view == bahilightWordsExplore",
+          "group": "inline"
+        },
+        {
+            "command": "bahighlightwords.findNext",
+            "when": "view == bahilightWordsExplore",
+            "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "webpack --mode production",
+    "compile": "webpack --mode none",
+    "watch": "webpack --mode none --watch",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
