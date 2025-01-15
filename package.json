@@ -3,7 +3,7 @@
   "displayName": "SimpleHighlightWords",
   "description": "simple highlight words",
   "icon": "images/highlight.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "benarvin",
   "engines": {
     "vscode": "^1.96.0"
@@ -38,6 +38,10 @@
       {
         "command": "bahighlightwords.treeRemoveHighlight",
         "title": "Remove"
+      },
+      {
+        "command": "bahighlightwords.treeRemoveAllHighlight",
+        "title": "Remove All"
       },
       {
         "command": "bahighlightwords.findPrevious",
@@ -112,6 +116,10 @@
       "view/item/context": [
         {
           "command": "bahighlightwords.treeRemoveHighlight",
+          "when": "view == bahilightWordsExplore"
+        },
+        {
+          "command": "bahighlightwords.treeRemoveAllHighlight",
           "when": "view == bahilightWordsExplore"
         },
         {

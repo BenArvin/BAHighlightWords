@@ -32,6 +32,10 @@ export function activate(context: vscode.ExtensionContext) {
         highlight.remove(e.highlight)
     })
 
+    vscode.commands.registerCommand('bahighlightwords.treeRemoveAllHighlight', e => {
+        highlight.remove('* All *')
+    })
+
     vscode.commands.registerCommand('bahighlightwords.removeAllHighlights', function () {
         highlight.clearAll()
     });
